@@ -1,6 +1,6 @@
 # Nhóm thực hiện K4 Track 3B
 
-Tên nhóm: Ling yan
+Tên nhóm: LingYan
 
 Repo chung: https://github.com/lingyan26ai/K4-Track-3B-Day24-Eval-Guard
 
