@@ -7,6 +7,8 @@ load_dotenv()
 
 # --- API Keys ---
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+# Base URL tuỳ chọn (proxy / dịch vụ tương thích OpenAI). Để trống = dùng api.openai.com.
+OPENAI_BASE_URL = os.getenv("OPENAI_BASE_URL") or None
 HF_TOKEN = os.getenv("HF_TOKEN", "")  # Optional: for HuggingFace models
 
 # --- Qdrant (same as Day 18) ---
@@ -45,8 +47,10 @@ GUARDRAILS_CONFIG_DIR = os.path.join(ROOT_DIR, "guardrails")
 PAIR_QUESTION_IDS = (1, 5, 12, 21, 41)
 
 # --- LLM Judge ---
-GENERATION_MODEL = "gpt-4o-mini"
-JUDGE_MODEL = "gpt-4o-mini"
+# Có thể ghi đè bằng biến môi trường nếu dịch vụ của bạn dùng tên model khác.
+GENERATION_MODEL = os.getenv("GENERATION_MODEL", "gpt-4o-mini")
+JUDGE_MODEL = os.getenv("JUDGE_MODEL", "gpt-4o-mini")
+LLM_MODEL = os.getenv("LLM_MODEL", GENERATION_MODEL)  # dùng bởi m4 (RAGAS) và m5 (enrichment)
 
 # --- Guardrail latency budget ---
 LATENCY_BUDGET_P95_MS = 500  # Full guard target; Task 12 currently measures input guards only.

@@ -2,8 +2,11 @@ colang_version: "1.0"
 
 models:
   - type: main
-    engine: openai
-    model: gpt-4o-mini
+    engine: openai_chat
+    model: gpt-6-luna
+    parameters:
+      model_name: gpt-6-luna
+      temperature: 0
 
 instructions:
   - type: general
